@@ -27,6 +27,10 @@
   color: inherit;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   width: 100%;
   min-height: 100vh;
@@ -50,6 +54,18 @@ body {
   margin: 0 auto;
   padding-top: 120px;
   padding-bottom: 160px;
+}
+@media (max-width: 1024px) {
+  .wrapper {
+    padding-top: 80px;
+    padding-bottom: 110px;
+  }
+}
+@media (max-width: 768px) {
+  .wrapper {
+    padding-top: 40px;
+    padding-bottom: 55px;
+  }
 }
 
 .logo-container {
@@ -330,7 +346,6 @@ header .menu-container .burger {
     transition: all 1s;
     cursor: pointer;
     position: relative;
-    background-color: red;
     z-index: 30;
   }
   header .menu-container .burger::before, header .menu-container .burger::after {
@@ -389,7 +404,7 @@ header .menu-container .menu ul {
     display: flex;
     flex-direction: column;
     max-height: 0px;
-    transition: all 1s;
+    transition: all 0.3s;
     opacity: 0;
     pointer-events: none;
   }
@@ -398,8 +413,8 @@ header .menu-container .menu ._active {
   max-height: 200px;
   margin-top: 80px;
   text-align: end;
-  -webkit-animation: visibleAnimation 1s;
-          animation: visibleAnimation 1s;
+  -webkit-animation: visibleAnimation 0.4s;
+          animation: visibleAnimation 0.4s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -425,6 +440,7 @@ header .wrapper-nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 header article section {
   padding-right: 90px;
@@ -659,4 +675,22 @@ footer .social-link span {
 }
 footer .social-link:hover:after {
   width: 100%;
+}
+
+.scroll-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background-color: var(--pink);
+  color: var(--white);
+  transition: all 0.2s;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+}
+.scroll-button:hover {
+  background-color: var(--white);
+  color: var(--pink);
 }/*# sourceMappingURL=style.css.map */

@@ -13,10 +13,11 @@ const burger = document.querySelector(".burger");
 const menu = document.querySelector(".menu").children[0];
 const nav = document.querySelector(".navigation-container");
 const submitButton = document.querySelector(".submit-button")
-const form = document.querySelector("form")
+const form = document.querySelector("form");
+const scrollButton = document.querySelector("#scrollButton");
+const links = document.querySelectorAll("a");
 
-
-document.body.addEventListener("click", (event) => {
+document.body.addEventListener("click", function(event) {
 
     // burger
     if (event.target === burger) {
@@ -31,7 +32,6 @@ document.body.addEventListener("click", (event) => {
         document.body.classList.remove("open-menu-burger");
     };
 
-
     // form
     if (event.target === submitButton) {
         event.preventDefault();
@@ -44,7 +44,14 @@ document.body.addEventListener("click", (event) => {
 
             console.log(JSON.stringify(formData))
         }
-    }
+    };
+
+    // if(event.target === scrollButton) {
+    //     window.scrollTo({
+    //         top: 0,
+    //         behavior: "smooth",
+    //     })
+    // };
 });
 
 document.querySelectorAll(".post-button").forEach(button => {
